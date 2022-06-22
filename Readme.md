@@ -4,16 +4,17 @@ In the 'PaymentService.cs' file you will find a method for making a payment. At 
 
  1. Lookup the account the payment is being made from.
  2. Check that the account is in a valid state to make the payment.
- 3. Deduct the payment amount from the account’s balance and update the account in the database.
+ 3. Deduct the payment amount from the accountâ€™s balance and update the account in the database.
 
-What we’d like you to do is refactor the code with the following things in mind:
+What weâ€™d like you to do is refactor the code with the following things in mind:
 
  - Adherence to SOLID principals
  - Testability
  - Readability
+ - The "client" will add many more Payment Types in the future. Make this future developers.
 
-We’d also like you to 
- - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
+Weâ€™d also like you to 
+ - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that youâ€™ve produced 
  - Run the PaymentService from the Smartwyre.DeveloperTest.Runner console application
 
 The only specific 'rules' are:
