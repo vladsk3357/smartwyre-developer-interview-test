@@ -8,7 +8,7 @@ In the 'PaymentService.cs' file you will find a method for making a payment. At 
 
 What we'd like you to do is refactor the code with the following things in mind:
 
- - Adherence to SOLID principals
+ - Adherence to SOLID principles
  - Testability
  - Readability
  - The "client" will add many more Payment Types in the future. Determining the payment type should be made as easy and intuitive as possible for developers who will edit this in the future.
