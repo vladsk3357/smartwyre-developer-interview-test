@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace Smartwyre.DeveloperTest.Runner
+namespace Smartwyre.DeveloperTest.Runner;
+
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            throw new NotImplementedException();
-        }
+        throw new NotImplementedException();
     }
 }

@@ -1,9 +1,8 @@
-﻿namespace Smartwyre.DeveloperTest.Types
+﻿namespace Smartwyre.DeveloperTest.Types;
+
+public enum IncentiveType
 {
-    public enum IncentiveType
-    {
-        FixedRateRebate,
-        AmountPerUom,
-        FixedCashAmount
-    }
+    FixedRateRebate,
+    AmountPerUom,
+    FixedCashAmount
 }

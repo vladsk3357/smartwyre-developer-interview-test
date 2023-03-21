@@ -1,11 +1,10 @@
-﻿namespace Smartwyre.DeveloperTest.Types
+﻿namespace Smartwyre.DeveloperTest.Types;
+
+public class RebateCalculation
 {
-    public class RebateCalculation
-    {
-        public int Id { get; set; }
-        public string Identifier { get; set; }
-        public string RebateIdentifier { get; set; }
-        public IncentiveType IncentiveType { get; set; }
-        public decimal Amount { get; set; }
-    }
+    public int Id { get; set; }
+    public string Identifier { get; set; }
+    public string RebateIdentifier { get; set; }
+    public IncentiveType IncentiveType { get; set; }
+    public decimal Amount { get; set; }
 }

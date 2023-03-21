@@ -1,9 +1,8 @@
 ﻿using Smartwyre.DeveloperTest.Types;
 
-namespace Smartwyre.DeveloperTest.Services
+namespace Smartwyre.DeveloperTest.Services;
+
+public interface IRebateService
 {
-    public interface IRebateService
-    {
-        CalculateRebateResult Calculate(CalculateRebateRequest request);
-    }
+    CalculateRebateResult Calculate(CalculateRebateRequest request);
 }
