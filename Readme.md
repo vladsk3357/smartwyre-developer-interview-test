@@ -1,21 +1,22 @@
 # Smartwyre Developer Test Instructions
 
-In the 'PaymentService.cs' file you will find a method for making a payment. At a high level the steps for making a payment are:
+In the 'RebateService.cs' file you will find a method for calculating a rebate. At a high level the steps for calculating a rebate are:
 
- 1. Lookup the account the payment is being made from.
- 2. Check that the account is in a valid state to make the payment.
- 3. Deduct the payment amount from the account’s balance and update the account in the database.
+ 1. Lookup the rebate that the request is being made against.
+ 2. Lookup the product that the request is being made against.
+ 2. Check that the rebate and request are valid to calculate the incentive type rebate.
+ 3. Store the rebate calculation.
 
 What we'd like you to do is refactor the code with the following things in mind:
 
  - Adherence to SOLID principles
  - Testability
  - Readability
- - The "client" will add many more Payment Types in the future. Determining the payment type should be made as easy and intuitive as possible for developers who will edit this in the future.
+ - In the future we will add many more incentive types. Determining the incentive type should be made as easy and intuitive as possible for developers who will edit this in the future.
 
 We’d also like you to 
  - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
- - Run the PaymentService from the Smartwyre.DeveloperTest.Runner console application
+ - Run the RebateService from the Smartwyre.DeveloperTest.Runner console application accepting inputs
 
 The only specific 'rules' are:
 
