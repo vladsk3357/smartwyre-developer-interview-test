@@ -1,14 +1,13 @@
 using System;
 using Xunit;
 
-namespace Smartwyre.DeveloperTest.Tests
+namespace Smartwyre.DeveloperTest.Tests;
+
+public class PaymentServiceTests
 {
-    public class PaymentServiceTests
+    [Fact]
+    public void Test1()
     {
-        [Fact]
-        public void Test1()
-        {
-            throw new NotImplementedException();
-        }
+        throw new NotImplementedException();
     }
 }
