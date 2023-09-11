@@ -12,7 +12,7 @@ What we'd like you to do is refactor the code with the following things in mind:
  - Adherence to SOLID principles
  - Testability
  - Readability
- - In the future we will add many more incentive types. Determining the incentive type should be made as easy and intuitive as possible for developers who will edit this in the future.
+ - Currently there are 3 known incentive types. In the future the business will want to add many more incentive types. Your solution should make it easy for developers to add new incentive types in the future.
 
 We’d also like you to 
  - Add some unit tests to the Smartwyre.DeveloperTest.Tests project to show how you would test the code that you’ve produced 
