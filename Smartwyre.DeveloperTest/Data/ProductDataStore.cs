@@ -9,25 +9,21 @@ public class ProductDataStore : IProductDataStore
 
     public ProductDataStore()
     {
-        // Add some sample products if the store is empty
-        if (_products.IsEmpty)
+        _products.TryAdd("PROD-1", new Product
         {
-            _products.TryAdd("PROD-1", new Product 
-            { 
-                Identifier = "PROD-1",
-                Price = 100m,
-                Uom = "KG",
-                SupportedIncentives = SupportedIncentiveType.FixedCashAmount | SupportedIncentiveType.FixedRateRebate
-            });
+            Identifier = "PROD-1",
+            Price = 100m,
+            Uom = "KG",
+            SupportedIncentives = SupportedIncentiveType.FixedCashAmount | SupportedIncentiveType.FixedRateRebate
+        });
 
-            _products.TryAdd("PROD-2", new Product 
-            { 
-                Identifier = "PROD-2",
-                Price = 200m,
-                Uom = "KG",
-                SupportedIncentives = SupportedIncentiveType.AmountPerUom
-            });
-        }
+        _products.TryAdd("PROD-2", new Product
+        {
+            Identifier = "PROD-2",
+            Price = 200m,
+            Uom = "KG",
+            SupportedIncentives = SupportedIncentiveType.AmountPerUom
+        });
     }
 
     public Product GetProduct(string productIdentifier)

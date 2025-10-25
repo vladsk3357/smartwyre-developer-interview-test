@@ -11,33 +11,29 @@ public class RebateDataStore : IRebateDataStore
 
     public RebateDataStore()
     {
-        // Add some sample rebates if the store is empty
-        if (_rebates.IsEmpty)
+        _rebates.TryAdd("REB-1", new Rebate
         {
-            _rebates.TryAdd("REB-1", new Rebate
-            {
-                Identifier = "REB-1",
-                Amount = 50m,
-                Incentive = IncentiveType.FixedCashAmount,
-                Percentage = 0m
-            });
+            Identifier = "REB-1",
+            Amount = 50m,
+            Incentive = IncentiveType.FixedCashAmount,
+            Percentage = 0m
+        });
 
-            _rebates.TryAdd("REB-2", new Rebate
-            {
-                Identifier = "REB-2",
-                Amount = 0m,
-                Incentive = IncentiveType.FixedRateRebate,
-                Percentage = 0.1m
-            });
+        _rebates.TryAdd("REB-2", new Rebate
+        {
+            Identifier = "REB-2",
+            Amount = 0m,
+            Incentive = IncentiveType.FixedRateRebate,
+            Percentage = 0.1m
+        });
 
-            _rebates.TryAdd("REB-3", new Rebate
-            {
-                Identifier = "REB-3",
-                Amount = 10m,
-                Incentive = IncentiveType.AmountPerUom,
-                Percentage = 0m
-            });
-        }
+        _rebates.TryAdd("REB-3", new Rebate
+        {
+            Identifier = "REB-3",
+            Amount = 10m,
+            Incentive = IncentiveType.AmountPerUom,
+            Percentage = 0m
+        });
     }
 
     public Rebate GetRebate(string rebateIdentifier)
