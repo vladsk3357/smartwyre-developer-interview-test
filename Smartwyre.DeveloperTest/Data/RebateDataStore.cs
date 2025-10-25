@@ -1,17 +1,61 @@
-﻿using Smartwyre.DeveloperTest.Types;
+﻿using System;
+using System.Collections.Concurrent;
+using Smartwyre.DeveloperTest.Types;
 
 namespace Smartwyre.DeveloperTest.Data;
 
-public class RebateDataStore
+public class RebateDataStore : IRebateDataStore
 {
-    public Rebate GetRebate(string rebateIdentifier)
+    private static readonly ConcurrentDictionary<string, Rebate> _rebates = new();
+    private static readonly ConcurrentDictionary<string, RebateCalculation> _calculations = new();
+
+    public RebateDataStore()
     {
-        // Access database to retrieve account, code removed for brevity 
-        return new Rebate();
+        // Add some sample rebates if the store is empty
+        if (_rebates.IsEmpty)
+        {
+            _rebates.TryAdd("REB-1", new Rebate
+            {
+                Identifier = "REB-1",
+                Amount = 50m,
+                Incentive = IncentiveType.FixedCashAmount,
+                Percentage = 0m
+            });
+
+            _rebates.TryAdd("REB-2", new Rebate
+            {
+                Identifier = "REB-2",
+                Amount = 0m,
+                Incentive = IncentiveType.FixedRateRebate,
+                Percentage = 0.1m
+            });
+
+            _rebates.TryAdd("REB-3", new Rebate
+            {
+                Identifier = "REB-3",
+                Amount = 10m,
+                Incentive = IncentiveType.AmountPerUom,
+                Percentage = 0m
+            });
+        }
     }
 
-    public void StoreCalculationResult(Rebate account, decimal rebateAmount)
+    public Rebate GetRebate(string rebateIdentifier)
     {
-        // Update account in database, code removed for brevity
+        ArgumentNullException.ThrowIfNull(rebateIdentifier);
+
+        return _rebates.TryGetValue(rebateIdentifier, out var rebate) ? rebate : null;
+    }
+
+    public void StoreCalculationResult(RebateCalculation calculation)
+    {
+        ArgumentNullException.ThrowIfNull(calculation);
+        ArgumentNullException.ThrowIfNull(calculation.RebateIdentifier);
+
+        _calculations.AddOrUpdate(
+            calculation.RebateIdentifier,
+            calculation,
+            (_, _) => calculation);
+
     }
 }
